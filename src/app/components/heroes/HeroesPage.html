@@ -1,0 +1,16 @@
+<general-page>
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+  </div>
+  <h2>Here are some links to help you start: {{atata}} </h2>
+
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+  </ul>
+  <hero-detail [hero]="selectedHero"></hero-detail>
+</general-page>
