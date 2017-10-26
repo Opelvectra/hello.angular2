@@ -40,3 +40,8 @@
   padding: 20px;
   color: #5df644;
 }
+
+.remove-comment-bttn {
+  float: right;
+  color: white;
+}

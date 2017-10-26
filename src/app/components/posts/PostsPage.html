@@ -8,6 +8,7 @@
     <div *ngFor="let post of results" class="post-container">
       <div class="post-title">
         {{ post.message }}
+        <span (click)="deletePost(post.id)" class="remove-comment-bttn">Delete</span>
       </div>
       <div class="post-info">
         likes: {{ post.likes }}, dislikes: {{ post.dislikes }}
@@ -15,6 +16,7 @@
       <div class="post-comments">
         <div *ngFor="let comment of post.comments" class="comment-container">
           {{ comment.message }}
+          <span (click)="deleteComment(post, comment.id)" class="remove-comment-bttn">X</span>
         </div>
       </div>
       <div class="comment-editor">

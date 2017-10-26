@@ -38,6 +38,22 @@ export class PostsPage {
       post.newComment = '';
     });
   }
+  deleteComment(post, commentId){
+    this.http.delete('http://localhost:8002/posts/' + post.id + '/comments/' + commentId)
+      .subscribe(() => removeFromUI());
+
+    function removeFromUI(){
+      let indexOfComment = -1;
+      post.comments.forEach(function(elem, index){
+        if(elem.id == commentId){
+          indexOfComment = index;
+        }
+      });
+      if(indexOfComment !== -1){
+        post.comments.splice(indexOfComment, 1);
+      }
+    }
+  }
   commitPost(){
     this.isPostEditorActive = false;
     console.log('>> post this: ', this.newPost);
@@ -48,5 +64,21 @@ export class PostsPage {
       this.results.push(data);
       this.newPost = '';
     });
+  }
+  deletePost(postId){
+    this.http.delete('http://localhost:8002/posts/' + postId)
+      .subscribe(() => removeFromUI(this.results));
+
+    function removeFromUI(posts){
+      let indexOfPost = -1;
+      posts.forEach(function(elem, index){
+        if(elem.id == postId){
+          indexOfPost = index;
+        }
+      });
+      if(indexOfPost !== -1){
+        posts.splice(indexOfPost, 1);
+      }
+    }
   }
 }
