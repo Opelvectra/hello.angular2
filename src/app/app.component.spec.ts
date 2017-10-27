@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
+import { HeroService } from './components/heroes/hero.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -51,10 +52,19 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('app');
   }));
-  /*it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Tour of Heroes!');
-  }));*/
+  it(`should return correct list of Heroes`, async(() => {
+    let heroService = new HeroService();
+    expect(heroService.getHeroes()).toEqual([
+      { id: 11, name: 'Mr. Nice!' },
+      { id: 12, name: 'Narco' },
+      { id: 13, name: 'Bombasto' },
+      { id: 14, name: 'Celeritas' },
+      { id: 15, name: 'Magneta' },
+      { id: 16, name: 'RubberMan' },
+      { id: 17, name: 'Dynama' },
+      { id: 18, name: 'Dr IQ' },
+      { id: 19, name: 'Magma' },
+      { id: 20, name: 'Tornado' }
+    ]);
+  }));
 });
