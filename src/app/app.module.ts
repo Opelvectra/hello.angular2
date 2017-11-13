@@ -10,6 +10,7 @@ import { HomePage } from './components/home/HomePage';
 import { GeneralPage } from './components/common/pages/GeneralPage';
 import { HeroesPage } from "./components/heroes/HeroesPage";
 import { PostsPage } from './components/posts/PostsPage';
+import { BattlePage } from './components/battle/BattlePage';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PostsPage } from './components/posts/PostsPage';
     HomePage,
     GeneralPage,
     HeroesPage,
-    PostsPage
+    PostsPage,
+    BattlePage
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,9 @@ import { PostsPage } from './components/posts/PostsPage';
     }, {
       path: 'heroes',
       component: HeroesPage
+    }, {
+      path: 'battle',
+      component: BattlePage
     }, {
       path: 'posts',
       component: PostsPage
