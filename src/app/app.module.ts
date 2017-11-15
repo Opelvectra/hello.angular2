@@ -11,6 +11,8 @@ import { GeneralPage } from './components/common/pages/GeneralPage';
 import { HeroesPage } from "./components/heroes/HeroesPage";
 import { PostsPage } from './components/posts/PostsPage';
 import { BattlePage } from './components/battle/BattlePage';
+import { DataBaseFactory } from './components/battle/battleground/DataBase';
+import { ApiService } from './components/battle/battleground/ApiService';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,10 @@ import { BattlePage } from './components/battle/BattlePage';
       component: PostsPage
     }])
   ],
-  providers: [],
+  providers: [
+    DataBaseFactory,
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
