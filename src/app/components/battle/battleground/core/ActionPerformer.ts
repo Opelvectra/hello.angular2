@@ -23,7 +23,7 @@ export class ActionPerformer{
       }
     }
     return {
-      battlegroundState: Object.assign({}, options.battlegroundState, {description: options.battlegroundState.description + '!'})
+      battlegroundState: Object.assign({}, options.battlegroundState)
     };
   }
 
