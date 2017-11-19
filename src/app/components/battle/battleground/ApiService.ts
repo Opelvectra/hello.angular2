@@ -11,11 +11,11 @@ export class ApiService{
     return this.daoLayerService.getBattleground(battleId);
   }
 
-  performAction(battleId, teamId, unitId, skillIndex){
+  performAction(battleId, skillIndex, target){
     let result = this.actionPerformer.performAction({
       battlegroundState:  this.getBattlegroundState(battleId),
       action: {
-        teamId, unitId, skillIndex
+        skillIndex, target
       }
     });
     this.daoLayerService.saveBattleground(result.battlegroundState);

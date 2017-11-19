@@ -16,4 +16,8 @@ export class DaoLayerService{
     battlegrounds[indexOfBattleground] = Object.assign({}, battlegroundState);
   }
 
+  getSkillMetaById(skillId){
+    return (this.dataBaseFactory.getSkills() || []).find(el => el.id === skillId);
+  }
+
 }

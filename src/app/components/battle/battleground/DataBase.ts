@@ -18,7 +18,7 @@ export class DataBaseFactory{
         testValue: 100,
         skills: [30, 150, 210, 320]
       }, {
-        id: 1,
+        id: 0,
         name: 'Test Dummy',
         team: 1,
         number: 0,
