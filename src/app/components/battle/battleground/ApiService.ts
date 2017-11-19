@@ -9,14 +9,6 @@ export class ApiService{
               private actionPerformer: ActionPerformer,
               private $battle: BattlegroundUtils){}
 
-  getBattlegroundState(battleId){
-    return this.daoLayerService.getBattleground(battleId);
-  }
-
-  getSkillMeta(skillId){
-    return this.daoLayerService.getSkillMetaById(skillId);
-  }
-
   performAction(battleId, skillIndex, target){
     let battlegroundState = this.getBattlegroundState(battleId),
         activeBattleUnit = this.$battle.getActiveUnit(battlegroundState),
@@ -33,6 +25,14 @@ export class ApiService{
     return {
       newBattlegroundState: result.battlegroundState
     };
+  }
+
+  private getBattlegroundState(battleId){
+    return this.daoLayerService.getBattleground(battleId);
+  }
+
+  private getSkillMeta(skillId){
+    return this.daoLayerService.getSkillMetaById(skillId);
   }
 
 }

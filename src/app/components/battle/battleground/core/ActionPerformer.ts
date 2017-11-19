@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { DaoLayerService } from '../DaoLayerService';
 import { BattlegroundUtils }  from '../core/BattlegroundUtils';
 
 @Injectable()
 export class ActionPerformer{
-  constructor(private daoLayerService: DaoLayerService,
-              private $battle: BattlegroundUtils){}
+  constructor(private $battle: BattlegroundUtils){}
 
   performAction(options){
     let action = options.action,
