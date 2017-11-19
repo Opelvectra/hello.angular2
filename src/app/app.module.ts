@@ -15,6 +15,7 @@ import { DataBaseFactory } from './components/battle/battleground/DataBase';
 import { ApiService } from './components/battle/battleground/ApiService';
 import { DaoLayerService } from './components/battle/battleground/DaoLayerService';
 import { ActionPerformer } from './components/battle/battleground/core/ActionPerformer';
+import { BattlegroundUtils } from './components/battle/battleground/core/BattlegroundUtils';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ActionPerformer } from './components/battle/battleground/core/ActionPer
     DataBaseFactory,
     DaoLayerService,
     ApiService,
-    ActionPerformer
+    ActionPerformer,
+    BattlegroundUtils
   ],
   bootstrap: [AppComponent]
 })
