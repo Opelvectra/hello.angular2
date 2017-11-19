@@ -5,10 +5,11 @@ export class DataBaseFactory{
   private battlegrounds;
   private skills;
   constructor(){
-    this.battlegrounds = [{
+    this.battlegrounds = [{}, {}, {
       id: 0,
       description: 'test battle with dummy',
       currentTeam: 0,
+      currUnit: 0,
       battleUnits: [{
         id: 0,
         name: 'Test Player',

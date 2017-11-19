@@ -4,4 +4,27 @@
       Welcome to {{title}}!
     </h1>
   </div>
+  <div>
+    <div>
+      <span class="battleground-info-label">[id]: </span>
+      <span class="battleground-info-value">{{battlegroundState.id}} </span>
+      <span class="battleground-info-label">[description]: </span>
+      <span class="battleground-info-value">{{battlegroundState.description}} </span>
+      <span class="battleground-info-label">[currentTeam]: </span>
+      <span class="battleground-info-value">{{battlegroundState.currentTeam}} </span>
+      <span class="battleground-info-label">[currUnit]: </span>
+      <span class="battleground-info-value">{{battlegroundState.currUnit}} </span>
+    </div>
+    <div *ngFor="let battleUnit of battlegroundState.battleUnits" class="battle-unit-container">
+      <span class="unit-name">[{{battleUnit.name}}]: </span>
+      <span class="unit-attribute-value">{{battleUnit.testValue}}</span>
+      <div class="skill-panel">
+        <button *ngFor="let unitSkill of battleUnit.skills; let i = index" class="skill-bttn"
+          (click)="performSkill(i)">
+          {{unitSkill}}
+        </button>
+      </div>
+    </div>
+    <div></div>
+  </div>
 </general-page>

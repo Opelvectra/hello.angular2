@@ -1,0 +1,32 @@
+.battleground-info-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.battleground-info-value {
+  font-size: 16px;
+}
+
+.unit-name {
+  font-size: 18px;
+  color: brown;
+  font-weight: bold;
+}
+
+.unit-attribute-value {
+  font-size: 18px;
+  color: blue;
+  font-weight: bold;
+}
+
+.skill-panel {
+  margin: 20px 0;
+}
+
+.skill-bttn {
+  margin-right: 20px;
+}
+
+.battle-unit-container {
+  margin: 20px 0;
+}

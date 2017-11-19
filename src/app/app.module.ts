@@ -13,6 +13,8 @@ import { PostsPage } from './components/posts/PostsPage';
 import { BattlePage } from './components/battle/BattlePage';
 import { DataBaseFactory } from './components/battle/battleground/DataBase';
 import { ApiService } from './components/battle/battleground/ApiService';
+import { DaoLayerService } from './components/battle/battleground/DaoLayerService';
+import { ActionPerformer } from './components/battle/battleground/core/ActionPerformer';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ApiService } from './components/battle/battleground/ApiService';
   ],
   providers: [
     DataBaseFactory,
-    ApiService
+    DaoLayerService,
+    ApiService,
+    ActionPerformer
   ],
   bootstrap: [AppComponent]
 })
