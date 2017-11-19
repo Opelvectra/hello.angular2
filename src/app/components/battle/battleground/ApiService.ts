@@ -27,7 +27,7 @@ export class ApiService{
     };
   }
 
-  private getBattlegroundState(battleId){
+  getBattlegroundState(battleId){
     return this.daoLayerService.getBattleground(battleId);
   }
 
