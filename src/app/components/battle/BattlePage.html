@@ -15,15 +15,18 @@
       <span class="battleground-info-label">[currUnit]: </span>
       <span class="battleground-info-value">{{battlegroundState.currUnit}} </span>
     </div>
-    <div *ngFor="let battleUnit of battlegroundState.battleUnits" class="battle-unit-container">
-      <span class="unit-name">[{{battleUnit.name}}]: </span>
-      <span class="unit-attribute-value">{{battleUnit.testValue}}</span>
-      <div class="skill-panel">
-        <button *ngFor="let unitSkill of battleUnit.skills; let i = index" class="skill-bttn"
-          (click)="performSkill(i)">
-          {{unitSkill}}
-        </button>
+    <div *ngFor="let battleTeam of battlegroundState.battleUnits" class="">
+      <div *ngFor="let battleUnit of battleTeam" class="battle-unit-container">
+        <span class="unit-name">[{{battleUnit.name}}]: </span>
+        <span class="unit-attribute-value">{{battleUnit.testValue}}</span>
+        <div class="skill-panel">
+          <button *ngFor="let unitSkill of battleUnit.skills; let i = index" class="skill-bttn"
+                  (click)="performSkill(i)">
+            {{unitSkill}}
+          </button>
+        </div>
       </div>
+      <button class="add-unit-bttn" (click)="addUnit(battleTeam[0] && battleTeam[0].team)">+</button>
     </div>
     <div></div>
   </div>

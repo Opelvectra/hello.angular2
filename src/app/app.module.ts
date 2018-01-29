@@ -16,6 +16,7 @@ import { ApiService } from './components/battle/battleground/ApiService';
 import { DaoLayerService } from './components/battle/battleground/DaoLayerService';
 import { ActionPerformer } from './components/battle/battleground/core/ActionPerformer';
 import { BattlegroundUtils } from './components/battle/battleground/core/BattlegroundUtils';
+import { BattlePageService } from './components/battle/battlePageService';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { BattlegroundUtils } from './components/battle/battleground/core/Battleg
     DataBaseFactory,
     DaoLayerService,
     ApiService,
+    BattlePageService,
     ActionPerformer,
     BattlegroundUtils
   ],

@@ -24,9 +24,12 @@
 }
 
 .skill-bttn {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .battle-unit-container {
   margin: 20px 0;
+  width: 200px;
+  background: #aaa;
+  display: inline-block;
 }
