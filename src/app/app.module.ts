@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './components/home/HomePage';
 import { GeneralPage } from './components/common/pages/GeneralPage';
 import { HeroesPage } from "./components/heroes/HeroesPage";
+import { DummyBattlePage } from './components/dummyBattle/DummyBattlePage';
 import { PostsPage } from './components/posts/PostsPage';
 import { BattlePage } from './components/battle/BattlePage';
 import { DataBaseFactory } from './components/battle/battleground/DataBase';
@@ -26,7 +27,8 @@ import { BattlePageService } from './components/battle/battlePageService';
     GeneralPage,
     HeroesPage,
     PostsPage,
-    BattlePage
+    BattlePage,
+    DummyBattlePage
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,9 @@ import { BattlePageService } from './components/battle/battlePageService';
     }, {
       path: 'battle',
       component: BattlePage
+    }, {
+      path: 'dummy-battle',
+      component: DummyBattlePage
     }, {
       path: 'posts',
       component: PostsPage

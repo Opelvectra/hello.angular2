@@ -1,0 +1,45 @@
+<general-page>
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+  </div>
+  <div>
+    <div>
+      battlegroundState: {{battlegroundState}}
+    </div>
+    <div>
+      <span class="battleground-info-label">[id]: </span>
+      <span class="battleground-info-value">{{battlegroundState.id}} </span>
+      <span class="battleground-info-label">[description]: </span>
+      <span class="battleground-info-value">{{battlegroundState.description}} </span>
+      <span class="battleground-info-label">[currentTeam]: </span>
+      <span class="battleground-info-value">{{battlegroundState.currentTeam}} </span>
+      <span class="battleground-info-label">[currUnit]: </span>
+      <span class="battleground-info-value">{{battlegroundState.currUnit}} </span>
+    </div>
+    <div *ngFor="let battleTeam of battlegroundState.teams" class="">
+      <div *ngFor="let battleUnit of battleTeam" class="battle-unit-container"
+           [ngClass]="{
+              'battle-unit-his-turn': isUnitsTurn(battleUnit),
+              'battle-unit-in-target': isUnitInTarget(battleUnit)
+           }">
+        <span class="unit-name">[{{battleUnit.name}}]: </span>
+        <span class="unit-attribute-value">{{battleUnit.testValue}}</span>
+        <div class="skill-panel">
+          <button *ngFor="let unitSkill of battleUnit.skills; let i = index" class="skill-bttn"
+                  (click)="performSkill(battleUnit, i)">
+            {{unitSkill}}
+          </button>
+        </div>
+        <div>
+          <button (click)="selectTarget(battleUnit)"
+              [disabled]="isUnitInTarget(battleUnit)">
+            select as target
+          </button>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+</general-page>
